@@ -37,29 +37,20 @@ Endpoint	Method	Description
 /ws/orders/:orderId	GET	WebSocket real-time updates
 Features
 
-# Market order execution with immediate fulfillment
-
-# DEX routing between Raydium and Meteora
-
-# Real-time WebSocket status updates
-
-# Concurrent order processing (10+ orders simultaneously)
-
-# Rate limiting (100 orders per minute)
-
-# Exponential backoff retry logic
+Market order execution with immediate fulfillment
+DEX routing between Raydium and Meteora
+Real-time WebSocket status updates
+Concurrent order processing (10+ orders simultaneously)
+Rate limiting (100 orders per minute)
+Exponential backoff retry logic
 
 # Production deployment on Railway
 
-# Why Market Orders
-
+Why Market Orders
 Market orders provide the simplest and fastest execution flow.
 The system can be extended to support:
-
 Limit Orders (add price tracking and triggers)
-
 Sniper Orders (trigger on token launch events)
-
 TWAP Orders (time-weighted execution over intervals)
 
 # Deployment
@@ -75,12 +66,10 @@ cd order-execution-engine
 
 npm install
 npm run dev
-
 npm test
 
 # Testing
 npm test
-
 curl http://localhost:3000/health
 curl -X POST http://localhost:3000/api/orders/execute \
   -H "Content-Type: application/json" \
@@ -93,18 +82,13 @@ wscat -c wss://order-execution-engine-production-e5ab.up.railway.app/ws/orders/y
 # Architecture
 
 Node.js + Fastify
-
 WebSocket real-time connections
-
 In-memory concurrent processing queue
-
 Deployment on Railway
-
 Health checks and structured logs
 
 # Repository
 
 
 Source Code: https://github.com/nikhildeshmukh454/order-execution-engine
-
 Live Demo: https://order-execution-engine-production-e5ab.up.railway.app
