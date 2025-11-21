@@ -5,12 +5,16 @@
 # 1. What This Project Is
 
 This project is a market order execution engine that routes trades across DEXs (Raydium and Meteora) and provides real-time WebSocket updates.
+
 It can execute multiple orders concurrently, apply rate limiting, and retry failed requests using exponential backoff.
+
 It is deployed in production on Railway.
 
 # 2.Installation
 git clone https://github.com/nikhildeshmukh454/order-execution-engine
+
 cd order-execution-engine
+
 npm install
 
 # 3.Order Execution Engine
@@ -20,6 +24,7 @@ A high-performance order execution engine with DEX routing and real-time WebSock
 # 4.Live Demo
 
 API Base URL:
+
 https://order-execution-engine-production-e5ab.up.railway.app
 
 # Quick Test
@@ -47,21 +52,30 @@ Exponential backoff retry logic
 # Production deployment on Railway
 
 Why Market Orders
+
 Market orders provide the simplest and fastest execution flow.
+
 The system can be extended to support:
+
 Limit Orders (add price tracking and triggers)
+
 Sniper Orders (trigger on token launch events)
+
 TWAP Orders (time-weighted execution over intervals)
 
 # Deployment
 
 Platform: Railway
+
 Status: Production ready
+
 Auto-deploy: On push to main branch
+
 URL: https://order-execution-engine-production-e5ab.up.railway.app
 
 # Local Development
 git clone https://github.com/nikhildeshmukh454/order-execution-engine
+
 cd order-execution-engine
 
 npm install
@@ -77,14 +91,19 @@ curl -X POST http://localhost:3000/api/orders/execute \
 
 # WebSocket Testing
 npm install -g wscat
+
 wscat -c wss://order-execution-engine-production-e5ab.up.railway.app/ws/orders/your-order-id
 
 # Architecture
 
 Node.js + Fastify
+
 WebSocket real-time connections
+
 In-memory concurrent processing queue
+
 Deployment on Railway
+
 Health checks and structured logs
 
 # Repository
@@ -93,3 +112,4 @@ Health checks and structured logs
 Source Code: https://github.com/nikhildeshmukh454/order-execution-engine
 
 Live Demo: https://order-execution-engine-production-e5ab.up.railway.app
+
