@@ -1,5 +1,6 @@
 import Fastify from 'fastify';
 import fastifyWebsocket from '@fastify/websocket';
+import fastifyFormbody from '@fastify/formbody'; // ✅ ADD THIS
 import { orderRoutes } from './routes/orders';
 import { simpleQueue } from './services/simpleQueue';
 
@@ -10,8 +11,9 @@ const fastify = Fastify({
   logger: true
 });
 
-// Register WebSocket plugin
+// Register plugins
 fastify.register(fastifyWebsocket);
+fastify.register(fastifyFormbody); // ✅ ADD THIS LINE - JSON body parser
 
 // Register routes
 fastify.register(orderRoutes);
